@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM2.5 Data in Beijing (2015-2025)</title>
+</head>
+<body>
+    <h1>Understanding PM2.5 Data in Beijing (2015-2025)</h1>
+    
+    <p>Industrial emissions, vehicular traffic, and meteorological conditions remain persistent factors contributing to air pollution in Beijing, which has always been a significant concern. The city has made remarkable progress in improving air quality in the recent decade through the monitoring and control of PM2.5—an air pollutant known to be detrimental to health (China Daily, 2024). To address the rising public unrest, in 2012 the Chinese government decided to relay real-time PM2.5 data to citizens, which was prompted due to international health concerns and the governments' need for greater transparency (The Guardian, 2012). This change in policy initiated the strict monitoring of air pollution in Beijing, aligning with global approaches.
+
+Even though there is much effort made towards improvements, the case of a highly populated city with a preexisting level of industrial activity makes challenges in Beijing, China quite persistent. According to a report released by China Daily, although PM2.5 levels are at their best in Beijing in comparison to previous years, the city still suffers from occasional spikes of this matter in winter due to an increase in heating and unfavorable weather patterns (China Daily, 2024). The data from The Guardian (2012) also spoke on global cooperation when it comes to monitoring, noting the US Embassy’s insistence on reporting given information and doing so in real time, which culminated with the installation of monitoring systems. Understanding the air quality issues in Beijing requires paying attention to the combining effects of pollution, enacted policies, and other environmental factors.
+
+In this blog, we will take a look at the trends and fluctuations of PM2.5 levels in Beijing over the past decade (2015-2025). We will explore the data in-depth, breaking it down by visualizing box plots, distributions, trends, and forecasts using Prophet, a forecasting tool.
+    <h2>1. Box Plot of PM2.5 Values in Beijing (2015-2025)</h2>
+    <p>A box plot provides a summary of the distribution of data through its quartiles, and highlights outliers. In this case, the box plot of PM2.5 values for Beijing reveals that the distribution of air pollution is highly skewed, with many data points falling below a PM2.5 value of 100. However, outliers above 200 and even higher values (up to 500) are observed, suggesting episodic spikes in pollution, which could be attributed to specific events like winter heating periods or dust storms. The plot clearly shows that while the average PM2.5 value stays below 100, there are occasional periods of very high pollution, which is a key factor when discussing air quality in urban settings.</p>
+    <img src="https://i.postimg.cc/tsZYBpbm/Box-Plot-of-PM2-5-Values-in-Beijing-2015-2025.png" alt="Box Plot of PM2.5 Values in Beijing (2015-2025)" style="max-width: 80%; height: auto;" />
+    
+    <h2>2. Distribution of PM2.5 Values in Beijing (2015-2025)</h2>
+    <p>The distribution plot (refer to "Distribution of PM2.5 Values in Beijing (2015-2025)") shows the frequency of different PM2.5 value ranges. A significant number of data points are concentrated in the lower ranges of PM2.5 (0-100), indicating that most of the time, Beijing experiences relatively lower levels of air pollution. However, there is a long right tail, suggesting that high pollution days are not uncommon, even though they may not occur daily. This aligns with the global challenges many cities face regarding air quality management, especially in high-density urban areas like Beijing.</p>
+    <img src="https://i.postimg.cc/qNPgYSMB/Distribution-of-PM2-5-Values-in-Beijing-2015-2025.png" alt="Distribution of PM2.5 Values in Beijing (2015-2025)" style="max-width: 80%; height: auto;" />
+    
+    <h2>3. Seasonal Changes in PM2.5 from March 2024 to March 2025</h2>
+    <p>Next, we explore the seasonal decomposition of the PM2.5 data for the period from March 2024 to March 2025. Time series decomposition splits data into trend, seasonal, and residual components.</p>
+    <ul>
+        <li>The trend component reveals a gradual decline in PM2.5 levels over time. This could be due to government efforts to reduce air pollution through policies like cleaner production technologies, emissions reductions, and better fuel standards.</li>
+        <li>The seasonal component shows clear fluctuations in pollution levels with a typical winter peak, likely linked to heating activities, and a summer low, influenced by weather conditions that favor better air quality.</li>
+        <li>The residual component captures the random variations that can't be explained by the trend or seasonality, often showing spikes due to unpredictable events like weather changes or transportation peaks.</li>
+    </ul>
+    <img src="https://i.postimg.cc/7CSby9f3/Plot-the-components-of-the-forecast-trend-weekly-seasonality-yearly-seasonality.png" alt="Time Series Decomposition from 2024 to 2025" style="max-width: 80%; height: auto;" />
+    
+    <h2>4. PM2.5 Forecast Using Prophet (2020-2026)</h2>
+    <p>By applying Prophet, we can predict future PM2.5 levels, providing us insights into how air pollution will evolve over the next few years. The forecasted PM2.5 values follow a similar pattern to the historical data, with fluctuations around the trend line. The forecast indicates that while PM2.5 levels are expected to decrease gradually, high pollution events will continue to occur intermittently, especially during certain months in winter when heating and meteorological factors influence air quality. This highlights the challenge of predicting exact air quality improvements and reinforces the need for continuous monitoring.</p>
+    <img src="https://i.postimg.cc/mzwDPr3h/PM2-5-Forecast-using-Prophet.png" alt="PM2.5 Forecast using Prophet" style="max-width: 80%; height: auto;" />
+    
+    <h2>5. Yearly Average PM2.5 and 3-Month Rolling Average (2015-2025)</h2>
+    <p>The "Yearly Average PM2.5 and 3-Month Rolling Average in Beijing (March 2, 2015 - March 2, 2025)" plot provides insights into the yearly trends of air quality in Beijing. The yearly average PM2.5 values show a gradual decline, indicating a positive impact from environmental regulations and interventions. The 3-month rolling average smooths out short-term fluctuations and provides a clearer view of the overall trend, which still follows the downward path.</p>
+    <img src="https://i.postimg.cc/DJF0fGXt/time-series-decomposition-from-2024-to-2025.png" alt="Yearly Average PM2.5 and 3-Month Rolling Average in Beijing (March 2, 2015 - March 2, 2025)" style="max-width: 80%; height: auto;" />
+    
+    <h2>6. Components of Forecast (Trend, Weekly, Yearly, and Daily)</h2>
+    <p>The "Plot the Components of the Forecast (Trend, Weekly Seasonality, Yearly Seasonality)" gives a deep dive into the seasonality of PM2.5 levels across different periods:</p>
+    <ul>
+        <li>Weekly: PM2.5 levels are generally lower during the weekend, possibly due to reduced industrial activity and traffic.</li>
+        <li>Yearly: The highest pollution levels are typically observed during the winter months (November-January), while the summer months show the lowest levels.</li>
+        <li>Daily: There is a clear diurnal pattern in PM2.5 levels, peaking during the day when traffic is at its highest, then falling during the night.</li>
+    </ul>
+    <img src="https://i.postimg.cc/2LS5hfTG/Yearly-Average-PM2-5-and-3-Month-Rolling-Average-in-Beijing-March-2-2015-March-2-2025.png" alt="Plot the components of the forecast (trend, weekly seasonality, yearly seasonality)" style="max-width: 80%; height: auto;" />
+    
+    <h2>Conclusion</h2>
+    <p>These visualizations and analyses reveal that PM2.5 levels in Beijing fluctuate significantly, with clear seasonal patterns. While efforts to control air pollution have led to a decline in yearly averages, certain high-pollution events are still common, particularly during winter. Forecasting these changes with tools like Prophet provides useful insights, but it also emphasizes the unpredictability and complexity of managing urban air quality. These trends, driven by factors such as seasonal heating, transportation, and government interventions, highlight the ongoing battle Beijing faces to improve its air quality, and further actions will be crucial to maintain these positive trends moving forward.</p>
+    
+    <h2>References</h2>
+    <p>China Daily, 2024. Beijing meets air quality standards. <a href="https://www.chinadaily.com.cn/a/202401/04/WS65960a86a3105f21a507a7c0.html" target="_blank">https://www.chinadaily.com.cn/a/202401/04/WS65960a86a3105f21a507a7c0.html</a>.</p>
+    <p>The Guardian, 2012. Beijing air quality to be better monitored. <a href="https://www.theguardian.com/environment/2012/oct/08/beijing-air-quality-monitor" target="_blank">https://www.theguardian.com/environment/2012/oct/08/beijing-air-quality-monitor</a>.</p>
+    <p>World Air Quality Historical Database. <a href="https://aqicn.org/historical/#!city:beijing" target="_blank">https://aqicn.org/historical/#!city:beijing</a>.</p>
+</body>
+</html>
